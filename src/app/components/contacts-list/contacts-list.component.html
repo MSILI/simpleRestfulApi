@@ -1,0 +1,36 @@
+<div class="container spacer">
+  <div class="card">
+    <div class="card-header"><h3>List des contacts</h3></div>
+    <div class="card-body">
+      <span class="text-danger">{{errorMsg}}</span>
+      <div class="form-group">
+        <label> Mot clé</label>
+        <input type="text" [(ngModel)] = "motCle" placeholder="Mot clé"/>
+        <button class="btn btn-primary"(click)="search()">Chercher</button>
+      </div>
+     <table class="table table-striped ">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+      </tr>
+       <tr *ngFor="let c of contactsPage?.content">
+        <td>{{c.id}}</td>
+         <td>{{c.nom}}</td>
+         <td>{{c.prenom}}</td>
+         <td>{{c.email}}</td>
+       </tr>
+     </table>
+      <div class="container">
+        <ul class="pagination">
+          <li *ngFor="let p of pages;let i = index" class="page-item" [ngClass]="{'active': i == curentPage}">
+            <a class="page-link" (click)="goToPage(i)">{{i}}
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
