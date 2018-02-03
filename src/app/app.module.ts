@@ -9,13 +9,15 @@ import { ContactsListComponent } from './components/contacts-list/contacts-list.
 import {HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
 import {FormsModule} from '@angular/forms';
+import { AddContactComponent } from './components/add-contact/add-contact.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsListComponent,
-    AboutComponent
+    AboutComponent,
+    AddContactComponent
   ],
   imports: [
     BrowserModule,
