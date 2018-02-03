@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContactService} from '../../services/contact.service';
 import {Router} from '@angular/router';
+import {Contact} from '../../entities/contact';
 
 @Component({
   selector: 'app-contacts-list',
@@ -18,6 +19,8 @@ export class ContactsListComponent implements OnInit {
   constructor(private _contactService: ContactService, private router: Router) { }
 
   ngOnInit() {
+    this.motCle = '';
+    this.search();
   }
 
   private doSearch() {
@@ -40,5 +43,14 @@ export class ContactsListComponent implements OnInit {
 
   public onEditContact(id: number) {
     this.router.navigate(['edit-contact', id]);
+  }
+
+  public onRemoveContact(contact: Contact) {
+    let confirm = window.confirm('Êtes-vous sur de vouloir supprimer cet élement ?');
+    if(confirm == true) {
+      this._contactService.removeContact(contact.id).subscribe(data => {
+        this.contactsPage.content.splice(this.contactsPage.content.indexOf(contact, 1));
+      }, error => this.errorMsg = error);
+    }
   }
 }
