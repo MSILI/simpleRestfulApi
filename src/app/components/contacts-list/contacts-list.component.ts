@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ContactService} from '../../services/contact.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contacts-list',
@@ -14,7 +15,7 @@ export class ContactsListComponent implements OnInit {
   public curentPage = 0;
   public size = 5;
   public pages: Array<number>;
-  constructor(private _contactService: ContactService) { }
+  constructor(private _contactService: ContactService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -37,4 +38,7 @@ export class ContactsListComponent implements OnInit {
       this.doSearch();
   }
 
+  public onEditContact(id: number) {
+    this.router.navigate(['edit-contact', id]);
+  }
 }

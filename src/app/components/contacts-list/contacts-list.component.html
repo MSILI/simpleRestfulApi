@@ -20,6 +20,9 @@
          <td>{{c.nom}}</td>
          <td>{{c.prenom}}</td>
          <td>{{c.email}}</td>
+         <td>
+           <a class="clickable" (click)="onEditContact(c.id)">edit</a>
+         </td>
        </tr>
      </table>
       <div class="container">

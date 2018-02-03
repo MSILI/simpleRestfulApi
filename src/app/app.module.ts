@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
 import {FormsModule} from '@angular/forms';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
+import { AddContactVTwoComponent } from './components/add-contact-v-two/add-contact-v-two.component';
+import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AddContactComponent } from './components/add-contact/add-contact.compon
     AppComponent,
     ContactsListComponent,
     AboutComponent,
-    AddContactComponent
+    AddContactComponent,
+    AddContactVTwoComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,

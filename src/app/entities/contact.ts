@@ -1,9 +1,8 @@
 export class Contact {
-  id: number;
-  nom: string;
-  prenom: string;
-  dateNaissance: string;
-  email: string;
-  telephone: number;
-  photo: string;
+
+  public id: number;
+  constructor( private nom: string, private prenom: string,
+               private dateNaissance: string, private email: string,
+               private telephone: number, private photo: string) {
+  }
 }

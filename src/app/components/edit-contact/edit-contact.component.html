@@ -1,6 +1,6 @@
 <div class="container spacer">
   <div class="card" *ngIf="mode == 1">
-    <div class="card-header"><h3>Ajouter contact</h3></div>
+    <div class="card-header"><h3>Modifier contact</h3></div>
     <div class="card-body">
       <div >
         <span class="text-danger">{{errorMsg}}</span>
@@ -30,7 +30,7 @@
           <input type="file" [(ngModel)]="contact.photo" class="form-control custom-file-control"/>
         </div>
       -->
-        <button class="btn btn-primary" (click)="addContact()">Ajouter</button>
+        <button class="btn btn-primary" (click)="updateContact()">Modifier</button>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
       <p><label>Date de naissance : </label> {{contact.dateNaissance}}</p>
       <p><label>Téléphone : </label> {{contact.telephone}}</p>
       <p><label>Email : </label> {{contact.email}}</p>
-      <p><button (click)="mode = 1" class="btn btn-primary"> Nouveau contact</button></p>
+      <p><button (click)="mode = 1" class="btn btn-primary"> Modifier contact</button></p>
     </div>
   </div>
 
